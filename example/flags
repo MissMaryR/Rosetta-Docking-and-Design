@@ -1,0 +1,25 @@
+-packing::ex1
+-packing::ex2
+-packing::ex1aro:level 6
+-packing::ex2aro
+-packing::extrachi_cutoff 1
+-packing::use_input_sc
+-packing::flip_HNQ
+-packing::no_optH false
+-packing::optH_MCA false
+
+-jd2:enzdes_out
+-linmem_ig 10
+-nblist_autoupdate
+-run:preserve_header
+
+-enzdes:bb_min_allowed_dev 0.5
+
+
+-parser:protocol /quobyte/jbsiegelgrp/missmaryr/scripts/dock2.xml
+-enzdes::cstfile cst_X.cst
+-s docked.pdb
+-extra_res_fa /quobyte/jbsiegelgrp/missmaryr/GH3/LIGANDS/all_conformers/CL3.params
+
+-nstruct 20
+-out:overwrite
