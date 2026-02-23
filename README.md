@@ -1,6 +1,6 @@
 # Step-by-step Instructions for Docking with Rosetta
 
-## Prepare Ligand library with Spartan
+## 1) Prepare Ligand library with Spartan
 
 1. Build ligand
 2. Click setup -> calculations -> conformer distribution
@@ -14,7 +14,7 @@
 
 [refer to video](https://www.youtube.com/watch?v=ocuT3tYeK7I) 
 
-## Use HIVE to prepare ligands for Rosetta
+## 2) Use HIVE to prepare ligands for Rosetta
 
 1. upload CL3.mol2 library conformer to HIVE
 * CL3 can instead be any 3 letter/number code for a ligand, dont use 001, be creative
@@ -34,7 +34,7 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 
 
 
-## Use HIVE to prepare enzyme for Rosetta
+## 3) Use HIVE to prepare enzyme for Rosetta
 
 1. Acquire enzyme PDB from [Uniprot](https://www.uniprot.org/) or [RCSB PDB](https://www.rcsb.org/)
    or refer to my [Alphafold3 Submission for HIVE](https://github.com/MissMaryR/AlphaFold3-Submission-for-HIVE) to generate a PDB from AF3
@@ -42,5 +42,5 @@ python3 /quobyte/jbsiegelgrp/software/Rosetta_314/rosetta/main/source/scripts/py
 
 
 
-## Use PyMOL to place ligand into active site
+## 4) Use PyMOL to place ligand into active site
 
