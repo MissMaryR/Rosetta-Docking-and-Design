@@ -16,10 +16,10 @@
 -enzdes:bb_min_allowed_dev 0.5
 
 
--parser:protocol /quobyte/jbsiegelgrp/missmaryr/laccases/scripts/dock2.xml
+-parser:protocol /quobyte/jbsiegelgrp/username/laccases/scripts/dock2.xml
 -enzdes::cstfile cst_X.cst
 -s docked.pdb
--extra_res_fa /quobyte/jbsiegelgrp/missmaryr/laccases/ligand/4EP.params
+-extra_res_fa /quobyte/jbsiegelgrp/username/laccases/ligand/4EP.params
 
 -nstruct 5
 -out:overwrite
