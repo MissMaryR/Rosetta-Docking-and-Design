@@ -99,6 +99,24 @@ CST::END
 ```
    * use residue3 for your ligand and residue1 for the residue using its' one letter code
    * my example cst_X.cst file only uses a distance and angle constraint, less constraints are better but more may need to be used if necessary
+   * Each of these strings is followed by 4 (optionally 5 ) columns of numbers: x0, xtol, k, covalent/periodicity, and number of samples.
+   * The 1st column, x0, specifies the optimum distance x0 for the respective value.
+   * The 2nd, xtol, column specifies the allowed tolerance xtol of the value.
+   * The 3rd column specifies the force constant k, or the strength of this particular parameter. If x is the value of the constrained parameter, the score penalty applied will be: 0 if |x - x0| < xtol and k * ( |x - x0| - xtol ) otherwise This 3rd column is only relevant for enzdes, and the number in it is not used by the matcher.
+   * The 4th column has a special meaning in case of the distanceAB parameter. It specifies whether the constrained interaction is covalent or not. 1 means covalent, 0 means non-covalent
+   * we dont use the 5th column - delete it
+
+ ### Constraints in simpler terms:
+   * 1st column - distance in Angstroms or angle to constrain
+   * *use PyMOL Wizard function to measure distances and angles for reference
+   * 2nd column - how much you allow it to move outside of the constraint from 1st column
+   *  *we constrain at 3A with a tolerance of 0.2A, so the ligand will be constrained 2.8-3.2A to the residue
+   * 3rd column - use 100 to strictly use the constraint, reduce to 50 or 25 to more loosely follow the constraint
+   * 4th column - 1=covalent 0=non-covalent
+
+
+
+
 
 
 
