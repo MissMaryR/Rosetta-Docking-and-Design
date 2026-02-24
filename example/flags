@@ -16,7 +16,7 @@
 -enzdes:bb_min_allowed_dev 0.5
 
 
--parser:protocol /quobyte/jbsiegelgrp/username/scripts/dock2.xml
+-parser:protocol dock2.xml
 -enzdes::cstfile cst_X.cst
 -s docked.pdb
 -extra_res_fa CL3.params
