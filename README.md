@@ -143,10 +143,34 @@ To adjust the script for design:
 1.	Enzyme with substrate – docked.pdb
 2.	Constraint file – cst_X.cst
 3.	Flags file – flags
-4.	Conformer library – 
-5.	Params file – 
-6.	.xml – docking.xml
+4.	Conformer library – CL3_conformers.pdb (not shown on github)
+5.	Params file – CL3.params
+6.	dock xml file – dock2.xml
 7.	Submission script – submit.sh
+
+### run docking with 
+```
+sbatch submit.sh
+```
+this will make PDB and score files in the results folder
+
+## 8) Score results
+
+go to results folder and run
+```
+sbatch zzzScoring.sh
+```
+this will quickly run through all score files and generate a zzztop_pdbs folder with a copy of the top 10 PDBs
+with a top_glycan_features.txt file, open it with 
+```
+emacs top_glycan_features.txt
+```
+
+this script shows the total number of PDBs made
+then filters for entries that passed all constraints < 1.0
+then filters for the top 20% with the best toal score
+then selects the top 10 with the best interface energy score
+
 
 
 
