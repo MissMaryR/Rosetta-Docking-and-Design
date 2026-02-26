@@ -3,10 +3,15 @@
 ## 1) Prepare Ligand library with Spartan
 
 1. Build ligand
-2. Click setup -> calculations -> conformer distribution
+2. Use guides to how to build in Spartan, be careful! beta & alpha positions matter!
+3. Click setup -> calculate
 * (this may be outdated, overall we just want to make all conformers possible)
 *  with molecular mechanics and MMFF
-* increase max number of conformers to 100%
+*  check mark the Maximum Conformers Examined
+*  check mark Percent Conformers Kept: 100%
+*  click submit
+*  you can check the status by clicking the World icon with a screen on it called 'Monitor'
+*  you can also terminate any jobs from this screen
 * if its a large ligand, it can take hours to run
 3. After running, a new window will open
 4. Bottom will show number of conformers, left arrow to go through them
