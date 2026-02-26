@@ -27,6 +27,12 @@ login to HIVE
 ssh username@hive.hpc.ucdavis.edu
 ```
 
+After logging into HIVE, load conda
+```
+module load conda/latest
+module load cuda/12.6.2  # Good to have even when you're not using a GPU
+```
+
 move folder from local to HIVE
 ```
 scp -r /path/to/local/folder username@hive.hpc.ucdavis.edu:/quobyte/jbsiegelgrp/username
