@@ -5,14 +5,13 @@
 1. Build ligand
 2. Use guides to how to build in Spartan, be careful! beta & alpha positions matter!
 3. Click setup -> calculate
-   <img width="574" height="396" alt="Screenshot 2026-02-25 at 6 21 06 PM" src="https://github.com/user-attachments/assets/b4ab5113-7379-4a95-946e-468fe9d1e449" />
-
+* <img width="574" height="396" alt="Screenshot 2026-02-25 at 6 21 06 PM" src="https://github.com/user-attachments/assets/b4ab5113-7379-4a95-946e-468fe9d1e449" />
 *  with molecular mechanics and MMFF
 *  check mark the Maximum Conformers Examined - your number may be different than my 3600
 *  check mark Percent Conformers Kept: 100%
 *  click submit
 *  you can check the status by clicking the World icon with a screen on it called 'Monitor'
-  <img width="475" height="195" alt="Screenshot 2026-02-25 at 6 23 05 PM" src="https://github.com/user-attachments/assets/7a8c88b4-0b3d-4803-ab38-ce25cd0789fb" />
+* <img width="475" height="195" alt="Screenshot 2026-02-25 at 6 23 05 PM" src="https://github.com/user-attachments/assets/7a8c88b4-0b3d-4803-ab38-ce25cd0789fb" />
 
 *  you can also terminate any jobs from this screen
 * if its a large ligand, it can take hours to run
