@@ -43,6 +43,9 @@ def load_scores():
 
 
 def main():
+    base_dir = os.getcwd()
+    os.chdir("results")
+
     data, header = load_scores()
     if not data:
         print("No valid score data found.")
@@ -86,8 +89,8 @@ def main():
     top_final = top_20_total[:10]
     print(f"✅ Selected top 10 by best {interf_E_key} (interface energy) from top 20% total_score")
 
-    # Output directory (everything goes into logs3)
-    output_dir = "zzztop_pdbs"
+    # Output directory
+    output_dir = os.path.join(base_dir, "Top_PDBs")
     os.makedirs(output_dir, exist_ok=True)
 
     csv_out = os.path.join(output_dir, "glycan_top_filtered.csv")
