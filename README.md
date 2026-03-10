@@ -252,8 +252,9 @@ Example:
 | `CL3_conformers.pdb` | Conformer library |
 | `CL3.params` | Ligand parameters |
 | `dock.xml` | Rosetta XML protocol |
-| `submit.sh` | SLURM submission script |
-| `results/` folder | Contains `zzzScoring.sh` |
+| `submit.sh` | SLURM submission script to start run |
+| `Scoring.sh` | SLURM submission script to score PDBs in results folder |
+| `results/` folder | for generated docked PDBs |
 | `scripts/` folder | Contains `rosetta_scores6.py` |
 
 ### Submit the docking job
@@ -266,14 +267,14 @@ This will generate PDB and score files in the `results/` folder.
 
 ## 8) Score and Filter Results
 
-Navigate to the `results/` folder and run:
+After the run is finished, run:
 ```bash
-sbatch zzzScoring.sh
+sbatch Scoring.sh
 ```
 
 This script will:
 1. Quickly process all score files
-2. Generate a `zzztop_pdbs/` folder with copies of the **top 10 PDBs**
+2. Generate a `Top_PDBs/` folder with copies of the **top 10 PDBs**
 3. Output a `top_glycan_features.txt` file
 
 ### View results
