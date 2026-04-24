@@ -133,7 +133,7 @@ def main():
         f.write(f"Top 10 by best {interf_E_key}:         {len(top_final)}\n")
 
     print("\n📝 Output written to:")
-    print(f" - Glycan features CSV:   {csv_out}")
+    print(f" - Top 10 features CSV:   {csv_out}")
     print(f" - Full scores CSV:       {full_csv_out}")
     print(f" - TXT summary:           {glycan_txt}")
 
