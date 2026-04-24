@@ -93,9 +93,9 @@ def main():
     output_dir = os.path.join(base_dir, "Top_PDBs")
     os.makedirs(output_dir, exist_ok=True)
 
-    csv_out = os.path.join(output_dir, "glycan_top_filtered.csv")
-    full_csv_out = os.path.join(output_dir, "glycan_top_fullscores.csv")
-    glycan_txt = os.path.join(output_dir, "top_glycan_features.txt")
+    csv_out = os.path.join(output_dir, "top_filtered.csv")
+    full_csv_out = os.path.join(output_dir, "top_fullscores.csv")
+    glycan_txt = os.path.join(output_dir, "top_features.txt")
 
     # Write CSV (glycan features only)
     with open(csv_out, 'w', newline='') as f:
