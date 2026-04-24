@@ -219,6 +219,8 @@ Example:
 
 ![REMARK 666 example](https://github.com/user-attachments/assets/8aaff5ea-2cd1-4b9a-8a5c-006377c1219a)
 
+This correlates to two constraints in the constraint file, if you just have one constraint then it would be one line, etc. 
+
 **Adjust to match your system:**
 - Replace `CL3` with your ligand code
 - Replace `GLU`/`ASP` with your catalytic residues (3-letter codes)
