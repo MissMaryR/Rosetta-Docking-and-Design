@@ -1,4 +1,4 @@
-# Step-by-step Instructions for Docking with Rosetta
+# Step-by-step Instructions for Docking and/or Design with Rosetta
 
 This guide walks through the full pipeline for docking a small molecule ligand into a protein active site using Rosetta. Steps proceed from ligand preparation → parameter generation → enzyme preparation → active site placement → constraint setup → docking → scoring.
 
@@ -14,7 +14,7 @@ This guide walks through the full pipeline for docking a small molecule ligand i
 | 4 | PyMOL | Place ligand in active site → `docked.pdb` |
 | 5 | PyMOL + text editor | Write constraint file → `cst_X.cst` |
 | 6 | Text editor | Configure `dock.xml` for your system |
-| 7 | HIVE | Run docking |
+| 7 | HIVE | Run docking and/or design |
 | 8 | HIVE | Score & filter results |
 
 ---
