@@ -1,0 +1,40 @@
+<ROSETTASCRIPTS>
+  <SCOREFXNS>
+    <ScoreFunction name="myscore" weights="ref2015_cst.wts"/>
+    </SCOREFXNS>
+  <SCORINGGRIDS ligand_chain="Y" width="20.0">
+    <ClassicGrid grid_name="vdw" weight="1.0"/>
+  </SCORINGGRIDS>
+  <TASKOPERATIONS>
+    <DetectProteinLigandInterface name="interface_detect" design="1" cut1="6.0" cut2="8.0" cut3="10.0" cut4="12.0"/>
+    <LimitAromaChi2 name="limchi2"/>
+    <SetCatalyticResPackBehavior name="catres_fix" fix_catalytic_aa="1"/>
+    PreventResiduesFromRepacking name=nopacking residues=NOPACK />
+    </TASKOPERATIONS>
+  <FILTERS>
+    <EnzScore name="allcst" score_type="cstE" scorefxn="myscore" whole_pose="1" energy_cutoff="2000"/>
+  </FILTERS>
+  <MOVERS>
+    <AddOrRemoveMatchCsts name="cstadd" cst_instruction="add_new"/>
+    <StartFrom name="start_from" chain="Y">
+      <Coordinates x="-5.784" y="17.784" z="-14.489"/>
+    </StartFrom>
+    <Transform name="predock" chain="Y" box_size="20" move_distance="10" angle="360" cycles="1000" repeats="3" temperature="5"/>
+    <EnzRepackMinimize name="repack_wbb" design="1" repack_only="0" scorefxn_minimize="myscore" scorefxn_repack="myscore" minimize_rb="1" rb_min_jumps="4,5"  minimize_sc="1" minimize_bb="1" cycles="1" minimize_lig="0" min_in_stages="0" backrub="0" task_operations="interface_detect,limchi2,catres_fix"/>
+    <EnzRepackMinimize name="cstopt" cst_opt="1" design="1" minimize_rb="1" minimize_sc="1" minimize_bb="0" cycles="1" min_in_stages="0" minimize_lig="0" rb_min_jumps="4,5"/>
+    <ParsedProtocol name="dock_pak">
+      <Add mover="predock"/>
+      <Add mover="cstopt"/>
+      <Add mover="repack_wbb"/>
+    </ParsedProtocol>
+    <GenericMonteCarlo name="interative_dp" mover_name="dock_pak" scorefxn_name="myscore" trials="10" sample_type="low" temperature="0.6" drift="1"/>
+    <EnzRepackMinimize name="repack_wbb_wppi" design="1" repack_only="0" scorefxn_minimize="myscore" scorefxn_repack="myscore" minimize_rb="1" rb_min_jumps="4,5"  minimize_sc="1" minimize_bb="1" cycles="2" minimize_lig="0" min_in_stages="0" backrub="0" task_operations="interface_detect,limchi2,catres_fix"/>
+  </MOVERS>
+  <PROTOCOLS>
+    <Add mover_name="cstadd"/>
+    <Add mover="start_from"/>
+    <Add mover="interative_dp"/>
+    <Add mover="repack_wbb_wppi"/>
+    Add filter="allcst"/>
+    </PROTOCOLS>
+</ROSETTASCRIPTS>
