@@ -230,17 +230,22 @@ Example:
 
 ---
 
-## 6) Configure `dock.xml`
+## 6) Decide on Dock or Design xml
 
 ### Multi-chain enzymes
 - Set `min_jumps` equal to the **number of chains** (e.g., `2` for a dimer, `3` for a trimer)
 
 ### Docking vs. Design mode
 
-| Parameter | Docking | Design |
-|-----------|---------|--------|
-| `repack_only` | `1` | `0` |
-| `design` | `0` | `1` |
+# Docking only
+Use `dock.xml` if you only want to dock your ligand into the active site to find a binding position. 
+This won't do any mutations, only ligand placing. 
+
+# Dock & Design
+Use `design.xml` if you want Rosetta to mutate residues around the ligand and dock it into the mutated active site. 
+This will do mutations and ligand placing. 
+
+Depending on what you choose, adjust the `flags` file to correspond to the correct script path. 
 
 ---
 
@@ -252,10 +257,10 @@ Example:
 |------|-------------|
 | `docked.pdb` | Enzyme with placed ligand |
 | `cst_X.cst` | Constraint file |
-| `flags` | Rosetta flags file |
+| `flags` | Rosetta flags file, adjust dock or design xml |
 | `CL3_conformers.pdb` | Conformer library |
 | `CL3.params` | Ligand parameters |
-| `dock.xml` | Rosetta XML protocol |
+| `dock.xml` | Rosetta XML protocol | or | `design.xml` | Rosetta XML protocol |
 | `submit.sh` | SLURM submission script to start run |
 | `Scoring.sh` | SLURM submission script to score PDBs in results folder |
 | `results/` folder | for generated docked PDBs |
